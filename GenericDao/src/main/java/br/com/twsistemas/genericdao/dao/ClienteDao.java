@@ -24,6 +24,7 @@ public class ClienteDao extends GenericDaoImpl<Cliente> implements GenericDao<Cl
         getPs().setString(1, entity.getNome());
         getPs().setString(2, entity.getEmail());
         getPs().setBoolean(3, entity.getAtivo());
+        getPs().setLong(4, entity.getIdUsuarioCadastro());
     }
 
     @Override
@@ -31,7 +32,8 @@ public class ClienteDao extends GenericDaoImpl<Cliente> implements GenericDao<Cl
         getPs().setString(1, entity.getNome());
         getPs().setString(2, entity.getEmail());
         getPs().setBoolean(3, entity.getAtivo());
-        getPs().setLong(4, entity.getId());
+        getPs().setLong(4, entity.getIdUsuarioCadastro());
+        getPs().setLong(5, entity.getId());
     }
 
     @Override
@@ -41,6 +43,7 @@ public class ClienteDao extends GenericDaoImpl<Cliente> implements GenericDao<Cl
         entity.setNome(rs.getString("cliente_nome"));
         entity.setEmail(rs.getString("cliente_email"));
         entity.setAtivo(rs.getBoolean("cliente_ativo"));
+        entity.setIdUsuarioCadastro(rs.getLong("cliente_idUsuarioCadastro"));
         return entity;
     }
 

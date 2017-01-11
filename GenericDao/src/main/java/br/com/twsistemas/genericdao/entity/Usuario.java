@@ -6,20 +6,14 @@ import br.com.twsistemas.genericdao.interfaces.DatabaseEntity;
  *
  * @author José
  */
-public class Cliente implements DatabaseEntity {
+public class Usuario implements DatabaseEntity {
 
     private Long id;
     private String nome;
     private String email;
     private Boolean ativo;
-    private Long idUsuarioCadastro;
-    
-    public Cliente() {
-    }
 
-    public Cliente(Long id, String nome) {
-        this.id = id;
-        this.nome = nome;
+    public Usuario() {
     }
 
     public Long getId() {
@@ -52,14 +46,6 @@ public class Cliente implements DatabaseEntity {
 
     public void setAtivo(Boolean ativo) {
         this.ativo = ativo;
-    }
-
-    public Long getIdUsuarioCadastro() {
-        return idUsuarioCadastro;
-    }
-
-    public void setIdUsuarioCadastro(Long idUsuarioCadastro) {
-        this.idUsuarioCadastro = idUsuarioCadastro;
     }
 
     @Override

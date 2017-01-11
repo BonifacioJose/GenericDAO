@@ -1,6 +1,6 @@
 <script>
 var table = 'Cliente';
-var fieldsString = 'private String nome;private String email;private Boolean ativo;';
+var fieldsString = 'private String nome;private String email;private Boolean ativo;private Long idUsuarioCadastro;';
 fieldsString = fieldsString.replace(/private /g,'');
 
 var fields = fieldsString.split(';');
@@ -17,7 +17,7 @@ for (i = 0; i < (fields.length - 1); i++) {
 	document.write('getPs().set' + variableAttribute[0] + '('  + (i + 1) + ',entity.get' + capitalize(variableAttribute[1] + '());'));
 };
 
-var fieldsStringPk = 'private Long id;private String nome;';
+var fieldsStringPk = 'private Long id;';
 fieldsStringPk = fieldsStringPk.replace(/private /g,'');
 var fieldsPk = fieldsStringPk.toString().split(';');
 for (i = 0; i < (fieldsPk.length - 1); i++) { 
@@ -26,7 +26,7 @@ for (i = 0; i < (fieldsPk.length - 1); i++) {
 };
 document.write('}');
 
-var fieldsString = 'private Long id;private String nome;private String email;private Boolean ativo;';
+var fieldsString = 'private Long id;private String nome;private String email;private Boolean ativo;private Long idUsuarioCadastro;';
 fieldsString = fieldsString.replace(/private /g,'');
 
 var fields = fieldsString.split(';');
@@ -39,6 +39,6 @@ document.write(table + ' entity = new ' + table + '();');
 document.write('return entity;}');
 
 function capitalize (text) {
-    return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+    return text.charAt(0).toUpperCase() + text.slice(1);
 }
 </script>
